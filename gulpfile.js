@@ -183,7 +183,8 @@ gulp.task('browser-sync', ['gulpfile', 'scripts-vendor:dev', 'scripts-app:dev', 
 	browserSync.init({
 		server: {
 			baseDir: './www',
-			middleware: proxyMiddleware('/api', { target: 'https://localhost:3000', changeOrigin: true })
+
+			middleware: proxyMiddleware('/api', { target: 'http://localhost:8080', changeOrigin: true })
 		},
 		notify: false
 	});
@@ -192,6 +193,7 @@ gulp.task('browser-sync', ['gulpfile', 'scripts-vendor:dev', 'scripts-app:dev', 
 		selector: '[ng-app]'
 	}));
 });
+
 
 gulp.task('watch', function () {
 	gulp.watch(paths.styles, ['styles-app:dev', browserSync.reload]);

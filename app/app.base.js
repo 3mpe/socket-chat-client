@@ -8,7 +8,7 @@ angular
 		userkey: 'chat-user',
 		sessionkey: 'chat-sess',
 		api: {
-			url: 'http://localhost:8080',
+			url: '/api',
 		}
 	})
 
