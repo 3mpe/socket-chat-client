@@ -17,12 +17,12 @@ angular
 
           return response;
         },
-				request: function (config) {
+				request: function (reqItem) {
 					$injector.invoke(function (Config, Storage) {
-						config.headers['token'] = Storage.name(Config.sessionkey).get();
+						reqItem.headers.token = Storage.name(Config.sessionkey).get();
 					});
 
-					return config;
+					return reqItem;
 				}
       };
     });
