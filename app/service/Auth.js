@@ -5,13 +5,13 @@ angular.module('socket-chat')
 				return Api.post('user/login', params);
 			},
 			setsession: function (value) {
-				Storage.name('user').set(value);
+				Storage.name(Config.sessionkey).set(value);
 			},
 			getsession: function (value) {
-				return Storage.get('user');
+				return Storage.name(Config.sessionkey).get();
 			},
 			isAuthorized: function () {
-				return Storage.name('user').exists();
+				return Storage.name(Config.sessionkey).exists();
 			}
 		};
 	});

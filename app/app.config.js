@@ -5,13 +5,13 @@ angular
       return {
         response: function (response) {
           $injector.invoke(function (Config, Storage) {
-            if (response.config.url == "/api/v1/user/logout") {
+            if (response.config.url == "/api/user/logout") {
               Storage.name(Config.userkey).remove();
               Storage.name(Config.sessionkey).remove();
             }
-            if (response && response.data && response.data.session) {
-              Storage.name(Config.userkey).set(response.data.user);
-              Storage.name(Config.sessionkey).set(response.data.session);
+            if (response && response.data && response.data.token) {
+              Storage.name(Config.sessionkey).set(response.data.token);
+              delete response.data.token;
             }
           });
 

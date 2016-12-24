@@ -17,6 +17,16 @@ angular
 						controllerAs: 'vm'
 					}
 				}
+			})
+			.state('app.home', {
+				url: '/home',
+				views: {
+					wrapper: {
+						templateUrl: 'pages/home/index.html',
+						controller: 'homeController',
+						controllerAs: 'vm'
+					}
+				}
 			});
 		$urlRouterProvider.otherwise('/login');
 		$locationProvider.hashPrefix('!');
