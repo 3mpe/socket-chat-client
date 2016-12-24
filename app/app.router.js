@@ -18,6 +18,6 @@ angular
 					}
 				}
 			});
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/login');
 		$locationProvider.hashPrefix('!');
 	});
